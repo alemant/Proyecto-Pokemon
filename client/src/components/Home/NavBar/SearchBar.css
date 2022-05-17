@@ -1,0 +1,18 @@
+.title {
+    color: #d717ca;
+    box-shadow: 1px 1px 10px #b717d7, 1px 1px 15px #d717b1, 1px 1px 30px #8417d7, 1px 1px 40px #17D7A0,
+        1px 1px 50px #d71737;
+    border-radius: 15px;
+    animation: parpadear 2s infinite backwards;
+}
+
+@keyframes parpadear {
+    to {
+        color: gray;
+        text-shadow: none;
+    }
+}
+
+.title:hover {
+    color: #17D7A0;
+}

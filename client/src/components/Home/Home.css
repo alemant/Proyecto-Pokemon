@@ -1,0 +1,28 @@
+body{
+    background: rgb(2, 0, 36);
+    /* background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(108, 136, 147, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../images/661563.jpg);
+    background-attachment: fixed;
+}
+
+.filters{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.reload {
+    margin: 10px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.created {
+    margin: 10px;
+}

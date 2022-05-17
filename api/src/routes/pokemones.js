@@ -8,9 +8,11 @@ const axios = require('axios');
 const url = 'https://pokeapi.co/api/v2/pokemon';
 
 const getPokeApi = async () => {
-    const pokeRequest1 = await axios.get(url);
-    const pokeRequest2 = await axios.get(pokeRequest1.data.next);
-    const allRequest = pokeRequest1.data.results.concat(pokeRequest2.data.results);
+    const pokeRequest1 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=17');
+    const allRequest = pokeRequest1.data.results
+    // const pokeRequest1 = await axios.get(url);
+    // const pokeRequest2 = await axios.get(pokeRequest1.data.next);
+    // const allRequest = pokeRequest1.data.results.concat(pokeRequest2.data.results);
     /* ------------------- */
     // allRequest nos devuelve un array de objetos -- name y url
     /* ------------------- */
@@ -34,17 +36,48 @@ const getPokeApi = async () => {
     return pokeData;
 };
 
-const getPokeDb = async () => {
-    return await Pokemon.findAll({
-        include: {
-            model: Type,
-            attributes: ['name'],
-            through: {
-                attributes: []
-            }
-        }
-    })
+// const getPokeDb = async () => {
+//     return await Pokemon.findAll({
+//         include: {
+//             model: Type,
+//             attributes: ['name'],
+//             through: {
+//                 attributes: []
+//             }
+//         }
+//     })
+// };
+
+
+const getPokeDb= async () => {
+    try {
+        const pokemons = await Pokemon.findAll({
+            include: {
+                model: Type,
+                through: {
+                attributes: [],
+                },
+            },
+            attributes: ["id","name","hp","attack","defense","speed","height","weight","image","created"],
+        });
+        return pokemons.map((e) => ({
+            id: e.id,
+            name: e.name,
+            hp: e.hp,
+            attack: e.attack,
+            defense: e.defense,
+            speed: e.speed,
+            height: e.height,
+            weight: e.weight,
+            image: e.image,
+            created: e.created,
+            types: e.types.map((e) => e.name)
+        }));
+    } catch (e) {
+        console.log(e);
+    }
 };
+
 
 const getAllPoke = async () => {
     const apitotalInfo = await getPokeApi();

@@ -1,0 +1,30 @@
+.cards {
+    color: white;
+    font-display: bold;
+}
+
+.name {
+    text-decoration: none;
+    display: block;
+    border: 1px solid blue;
+    width: 200px;
+    height: 45px;
+    border-radius: 5%;
+    padding-top: 20px;
+    font-family: arial;
+    transition: 2s;
+}
+
+.name:hover {
+    background-color: blue;
+    border: 1px solid white;
+    color: white
+}
+
+h4 {
+    color: rgb(225, 211, 211);
+}
+
+.id {
+    color:blue
+}

@@ -1,0 +1,75 @@
+.card {
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(108, 136, 147, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    border-color: rgb(22, 22, 70);
+    border-radius: 10px;
+    margin: 20px;
+    width: 20rem;
+    transition: 1.2s;
+}
+
+.card:hover {
+    transition: 1.4s;
+    transform: scale(1.1);
+    background-color: #17D7A0;
+    box-shadow: 1px 1px 10px #17D7A0, 1px 1px 15px #17D7A0, 1px 1px 30px #17D7A0, 1px 1px 40px #17D7A0,
+                1px 1px 50px #17D7A0;
+}
+
+.link-title {
+    text-decoration: none;
+}
+
+.type {
+    margin:5px;
+}
+
+.card-title {
+    padding-top:25px;
+    text-decoration: none;
+    margin:auto;
+    color: rgb(18, 4, 151);
+    margin-bottom: 15px;
+    transition: 1.9s;
+}
+
+.card-title:hover {
+    transition: 1.9s;
+    transform: scale(1.1);
+}
+
+img {
+    padding-bottom:15px;
+    transition: 1.4s;
+}
+
+.img:hover {
+    transition: 1.9s;
+    transform: scale(1.2);
+}
+
+/* #closeIcon {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8px;
+    margin-top: 8px;
+} */
+
+/* .boton {
+    background-color: #e963dd;
+    border-color: rgb(139, 124, 124);
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    transition: transform .2s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.boton:hover {
+    background-color: blueviolet;
+    border: 1px solid darkblue;
+    color: black;
+    transform: scale(1.3);
+} */
