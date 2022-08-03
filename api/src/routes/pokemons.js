@@ -15,11 +15,17 @@ const getPokeApi = async () => {
     const pokeRequest3 = await axios.get(pokeRequest2.data.next);
     const pokeRequest4 = await axios.get(pokeRequest3.data.next);
     const pokeRequest5 = await axios.get(pokeRequest4.data.next);
+    const pokeRequest6 = await axios.get(pokeRequest5.data.next);
+    const pokeRequest7 = await axios.get(pokeRequest6.data.next);
+    const pokeRequest8 = await axios.get(pokeRequest7.data.next);
     const allRequest = pokeRequest1.data.results
-        .concat(pokeRequest2.data.results)
-        .concat(pokeRequest3.data.results)
-        .concat(pokeRequest4.data.results)
-        .concat(pokeRequest5.data.results);
+      .concat(pokeRequest2.data.results)
+      .concat(pokeRequest3.data.results)
+      .concat(pokeRequest4.data.results)
+      .concat(pokeRequest5.data.results)
+      .concat(pokeRequest6.data.results)
+      .concat(pokeRequest7.data.results)
+      .concat(pokeRequest8.data.results);
     /* ------------------- */
     // allRequest nos devuelve un array de objetos -- name y url
     /* ------------------- */
