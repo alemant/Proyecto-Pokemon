@@ -3,7 +3,7 @@ const axios = require('axios');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-const PokemonesRoute = require('./pokemones');
+const PokemonesRoute = require('./pokemons');
 const TypesRoute = require('./types');
 
 
