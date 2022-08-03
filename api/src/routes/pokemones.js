@@ -12,7 +12,9 @@ const getPokeApi = async () => {
     // const allRequest = pokeRequest1.data.results
     const pokeRequest1 = await axios.get(url);
     const pokeRequest2 = await axios.get(pokeRequest1.data.next);
-    const allRequest = pokeRequest1.data.results.concat(pokeRequest2.data.results);
+    const pokeRequest3 = await axios.get(pokeRequest2.data.next);
+    const request = pokeRequest1.data.results.concat(pokeRequest2.data.results);
+    const allRequest = request.concat(pokeRequest3.data.results);
     /* ------------------- */
     // allRequest nos devuelve un array de objetos -- name y url
     /* ------------------- */
@@ -30,7 +32,7 @@ const getPokeApi = async () => {
             height: e.data.height,
             weight: e.data.weight,
             image: e.data.sprites.other.home.front_default,
-            // types: e.data.types.map(e => e.type.name)
+            types: e.data.types.map(e => e.type.name)
         };
     });
     return pokeData;
@@ -90,15 +92,6 @@ const getPokeByIdApi = async (id) => {
     };
     return pokeData;
 };
-
-// const getApiName = async (name) => {
-//     const namesApi = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-//     const allNames = {
-//         name: namesApi.name,
-//         image: namesApi.sprites.other["official-artwork"].front_default,
-//     };
-//     return allNames;
-// }
 
 const getApiName = async (name) => {
     try {
