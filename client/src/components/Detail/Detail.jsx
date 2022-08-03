@@ -20,20 +20,17 @@ export default function Detail(){
 
 
     return (
-        <div className='cards'>
+        <div className='detail'>
             <div>
                 <h3>
                     <a className="name" href="/home">Go back to Home</a>
                 </h3>
             </div>
-            <div className="img">
+            <div className="image">
                 <img src={pokemon.image} alt="No se encontró la imagen"/>
             </div>
-            <div className='card'>
-                <h4 className="id">
-                    ID N°: {pokemon.id}
-                </h4>
-                <h1 className="card-title">
+            <div id='card'>
+                <h1 className="Title">
                     Hi, my name is {pokemon.name}
                 </h1>
                 <h4>

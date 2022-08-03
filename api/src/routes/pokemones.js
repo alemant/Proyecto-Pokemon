@@ -8,11 +8,11 @@ const axios = require('axios');
 const url = 'https://pokeapi.co/api/v2/pokemon';
 
 const getPokeApi = async () => {
-    const pokeRequest1 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=17');
-    const allRequest = pokeRequest1.data.results
-    // const pokeRequest1 = await axios.get(url);
-    // const pokeRequest2 = await axios.get(pokeRequest1.data.next);
-    // const allRequest = pokeRequest1.data.results.concat(pokeRequest2.data.results);
+    // const pokeRequest1 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=17');
+    // const allRequest = pokeRequest1.data.results
+    const pokeRequest1 = await axios.get(url);
+    const pokeRequest2 = await axios.get(pokeRequest1.data.next);
+    const allRequest = pokeRequest1.data.results.concat(pokeRequest2.data.results);
     /* ------------------- */
     // allRequest nos devuelve un array de objetos -- name y url
     /* ------------------- */
@@ -30,23 +30,11 @@ const getPokeApi = async () => {
             height: e.data.height,
             weight: e.data.weight,
             image: e.data.sprites.other.home.front_default,
-            types: e.data.types.map(e => e.type.name)
+            // types: e.data.types.map(e => e.type.name)
         };
     });
     return pokeData;
 };
-
-// const getPokeDb = async () => {
-//     return await Pokemon.findAll({
-//         include: {
-//             model: Type,
-//             attributes: ['name'],
-//             through: {
-//                 attributes: []
-//             }
-//         }
-//     })
-// };
 
 
 const getPokeDb= async () => {
@@ -103,22 +91,87 @@ const getPokeByIdApi = async (id) => {
     return pokeData;
 };
 
+// const getApiName = async (name) => {
+//     const namesApi = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+//     const allNames = {
+//         name: namesApi.name,
+//         image: namesApi.sprites.other["official-artwork"].front_default,
+//     };
+//     return allNames;
+// }
+
+const getApiName = async (name) => {
+    try {
+        const namesApi = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        const results = namesApi.data;
+        const pokemonInfo = {
+            id: results.id,
+            name: results.name,
+            types: results.types.map((t) => t.type.name),
+            image: results.sprites.other.home.front_default,
+        };
+        return pokemonInfo;
+    } catch (e){ 
+        console.log(e)
+        // return null;
+    }
+};
+
 //------------------------------------------------------------
 
-router.get('/', async (req, res, next) => {
-    try {
-        const { name } = req.query;
-        if(!name) {
-            return res.status(200).send(await getAllPoke())
-        }else {
-            const allPokemons = await getAllPoke()
-            const pokeName = await allPokemons.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
-            if(pokeName) return res.status(200).json(pokeName)
+// router.get('/', async (req, res, next) => {
+//     try {
+//         const { name } = req.query;
+//         if(!name) {
+//             return res.status(200).send(await getAllPoke())
+//         }else {
+//             const allPokemons = await getAllPoke()
+//             const pokeName = await allPokemons.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
+//             if(pokeName) return res.status(200).json(pokeName)
+//         }
+//     }catch(err) {
+//         next(err);
+//     }
+// });
+
+router.get("/", async (req, res) => {
+    const name = req.query.name;
+    if (name) {
+        const pokemonName = await getApiName(name.toLowerCase());
+        if (pokemonName) {
+            return res.status(200).send([pokemonName]);
+        } else {
+            const pokemonsDb = await getPokeDb();
+            const pokemon = pokemonsDb.filter(e => e.name.toLowerCase() === name.toLowerCase());
+            return pokemon.length
+            ? pokemon
+            : res.status(404).send("Pokemon not found");
         }
-    }catch(err) {
-        next(err);
+    } else {
+        const pokemonsTotal = await getAllPoke();
+        return res.status(200).send(pokemonsTotal);
     }
 });
+
+// router.get('/', async (req, res, next) => {
+//     const {name} = req.query;
+//     const allPokesName = await getAllPoke();
+//     try {
+//         if (name) {
+//             const pokeName = await getApiName(name);
+//             if(pokeName){
+//                 return pokeName;
+//             }else{
+//             let poke = allPokesName.filter(e => e.name.toLowerCase() === name.toLowerCase());
+//             poke.length ? res.status(200).send(poke) : res.status(404).send('Pokemon not found');} 
+//         } else {
+//             let pokemons = await getAllPokemon();
+//             return res.status(200).send(pokemons);
+//         }
+//     } catch (err) {
+//         next(err);
+//     }
+// });
 
 
 router.get('/:id', async (req, res, next) => {

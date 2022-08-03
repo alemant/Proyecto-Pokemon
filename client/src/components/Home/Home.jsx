@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from '../Home/NavBar/SearchBar';
 import Cards from './Cards/Cards';
 import AlphabeticOrder from './NavBar/Filters/AlphabeticOrder';
 import ByCreation from './NavBar/Filters/ByCreation';
 import ByForce from './NavBar/Filters/ByForce';
 import ByType from './NavBar/Filters/ByType';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons } from '../../actions/index.js';
+import { getTypes, getPokemons } from '../../actions/index.js';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Paginated from './Paginated';
@@ -23,6 +22,10 @@ export default function Home(){
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
     
+    if (currentPage > Math.ceil(allPokemons.length / pokemonsPerPage) && currentPage !== 1) {
+        setCurrentPage(1);
+    }
+
     //Para el paginado
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -32,6 +35,7 @@ export default function Home(){
 
     useEffect(() => {
         dispatch(getPokemons())  // Esto es lo mismo que hacer el mapDispatchToProps
+        dispatch(getTypes())
     }, [dispatch]);
     
     function handleClick(e){

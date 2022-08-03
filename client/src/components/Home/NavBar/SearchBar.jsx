@@ -20,6 +20,11 @@ export default function SearchBar(){
         setPokemon('')
     };
 
+    function handleKeyPress(e) {
+        if (e.key === 'Enter') {
+            handleSubmit(e);
+        }
+    }
 
     return (
         <div>
@@ -29,7 +34,8 @@ export default function SearchBar(){
                     type="text"
                     placeholder="Pokemon search..."
                     value={pokemon}
-                    onChange={(e) => handleInputChange(e)}>
+                    onChange={(e) => handleInputChange(e)}
+                    onKeyPress={e => handleKeyPress(e)}>
                 </input>
                 <button
                     className="buttonSearchBar"

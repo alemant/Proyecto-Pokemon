@@ -31,10 +31,10 @@ export function getPokeByName(name) {
 export function getTypes(){
   return async function(dispatch){
     try {
-      let types = await axios.get('http://localhost:3001/types');
+      let allTypes = await axios.get('http://localhost:3001/types');
       return dispatch({
         type: 'GET_TYPES',
-        payload: types.json
+        payload: allTypes.data
       }); 
     }catch(err){
       console.log(err)
