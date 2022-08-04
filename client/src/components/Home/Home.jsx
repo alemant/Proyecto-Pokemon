@@ -48,11 +48,11 @@ export default function Home(){
             <div className="search">
                 <SearchBar />
             </div>
-            <button className="created">
+            {/* <button className="created"> */}
                 <Link className="link" to="/pokemon">Pokemon Factory</Link>
-            </button>
+            {/* </button> */}
             <div className="reload">
-                <button onClick={e => handleClick(e)}>Reload Pokemons</button>
+                <button className= "button" onClick={e => handleClick(e)}>Reload Pokemons</button>
             </div>
             <div className="filters">
                 <ByType/>

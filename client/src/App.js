@@ -3,6 +3,7 @@ import {  BrowserRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import Home from './components/Home/Home';
 import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Home />
           </Route >
           <Route exact path="/pokemons/:id" component={Detail} />
+          <Route exact path="/pokemon" component={Form} />
         </Switch >
       </div >
     </BrowserRouter>
