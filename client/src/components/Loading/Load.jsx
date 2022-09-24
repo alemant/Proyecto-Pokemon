@@ -5,7 +5,7 @@ export default function Load() {
     return (
         <div>
             Load
-            {/* <img src={pica} alt="Pikachu durmiendo" /> */}
+            <img src={pica} alt="Pikachu durmiendo" />
         </div>
     )
 }

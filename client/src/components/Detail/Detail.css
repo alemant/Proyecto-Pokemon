@@ -10,17 +10,47 @@
     text-shadow: 4px -1px 0px rgba(9, 8, 8, 0.73);
 }
 
-.name {
+.goBack {
+    display: inline-block;
+    width: 80px;
+    height: 25px;
+    padding: 7px 25px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #a60bc5;
+    border: none;
+    border-radius: 15px;
+    /* box-shadow: 10px 0px 10px #a60bc5; */
+    box-shadow: 0 5px #666;
+}
+
+.goBack:hover {
+    background-color: #23109e
+}
+
+.goBack:active {
+    background-color: #a60bc5;
+    /* box-shadow: 0 5px #666; */
+    box-shadow: 0px 5px 10px #c5bac7;
+    transform: translateY(4px);
+}
+
+/* .name {
     text-decoration: none;
     display: block;
     border: 1px solid blue;
-    width: 200px;
-    height: 45px;
+    width: 50px;
+    height: 15px;
     border-radius: 5%;
     padding-top: 20px;
     font-family: arial;
     transition: 2s;
-}
+} */
 
 #card {
     height: 30rem;

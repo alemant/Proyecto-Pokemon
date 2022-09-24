@@ -23,7 +23,7 @@ export default function Detail(){
         <div className='detail'>
             <div>
                 <h3>
-                    <a className="name" href="/home">Go back to Home</a>
+                    <a className="goBack" href="/home">Go back to Home</a>
                 </h3>
             </div>
             <div className="image">
@@ -31,7 +31,7 @@ export default function Detail(){
             </div>
             <div id='card'>
                 <h1 className="Title">
-                    Hi, my name is {pokemon.name}
+                    Hi, my name is {pokemon.name?.replace(pokemon.name[0], pokemon.name[0].toUpperCase())}
                 </h1>
                 <h4>
                     My types: {pokemon.types?.map(t => {

@@ -8,32 +8,32 @@ const axios = require('axios');
 const url = 'https://pokeapi.co/api/v2/pokemon';
 
 const getPokeApi = async () => {
-    // const pokeRequest1 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=17');
-    // const allRequest = pokeRequest1.data.results
-    const pokeRequest1 = await axios.get(url);
-    const pokeRequest2 = await axios.get(pokeRequest1.data.next);
-    const pokeRequest3 = await axios.get(pokeRequest2.data.next);
-    const pokeRequest4 = await axios.get(pokeRequest3.data.next);
-    const pokeRequest5 = await axios.get(pokeRequest4.data.next);
-    const pokeRequest6 = await axios.get(pokeRequest5.data.next);
-    const pokeRequest7 = await axios.get(pokeRequest6.data.next);
-    const pokeRequest8 = await axios.get(pokeRequest7.data.next);
-    const pokeRequest9 = await axios.get(pokeRequest8.data.next);
-    const pokeRequest10 = await axios.get(pokeRequest9.data.next);
-    // const pokeRequest11 = await axios.get(pokeRequest10.data.next);
-    // const pokeRequest12 = await axios.get(pokeRequest11.data.next);
+    const pokeRequest1 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=17');
     const allRequest = pokeRequest1.data.results
-        .concat(pokeRequest2.data.results)
-        .concat(pokeRequest3.data.results)
-        .concat(pokeRequest4.data.results)
-        .concat(pokeRequest5.data.results)
-        .concat(pokeRequest6.data.results)
-        .concat(pokeRequest7.data.results)
-        .concat(pokeRequest8.data.results)
-        .concat(pokeRequest9.data.results)
-        .concat(pokeRequest10.data.results)
-    //     .concat(pokeRequest11.data.results)
-    //     .concat(pokeRequest12.data.results);
+    // const pokeRequest1 = await axios.get(url);
+    // const pokeRequest2 = await axios.get(pokeRequest1.data.next);
+    // const pokeRequest3 = await axios.get(pokeRequest2.data.next);
+    // const pokeRequest4 = await axios.get(pokeRequest3.data.next);
+    // const pokeRequest5 = await axios.get(pokeRequest4.data.next);
+    // const pokeRequest6 = await axios.get(pokeRequest5.data.next);
+    // const pokeRequest7 = await axios.get(pokeRequest6.data.next);
+    // const pokeRequest8 = await axios.get(pokeRequest7.data.next);
+    // const pokeRequest9 = await axios.get(pokeRequest8.data.next);
+    // const pokeRequest10 = await axios.get(pokeRequest9.data.next);
+    // // const pokeRequest11 = await axios.get(pokeRequest10.data.next);
+    // // const pokeRequest12 = await axios.get(pokeRequest11.data.next);
+    // const allRequest = pokeRequest1.data.results
+    //     .concat(pokeRequest2.data.results)
+    //     .concat(pokeRequest3.data.results)
+    //     .concat(pokeRequest4.data.results)
+    //     .concat(pokeRequest5.data.results)
+    //     .concat(pokeRequest6.data.results)
+    //     .concat(pokeRequest7.data.results)
+    //     .concat(pokeRequest8.data.results)
+    //     .concat(pokeRequest9.data.results)
+    //     .concat(pokeRequest10.data.results)
+    // //     .concat(pokeRequest11.data.results)
+    // //     .concat(pokeRequest12.data.results);
     /* ------------------- */
     // allRequest nos devuelve un array de objetos -- name y url
     /* ------------------- */
@@ -190,7 +190,15 @@ router.get('/:id', async (req, res, next) => {
     const { id } = req.params;
     try {
         if(isNaN(id)){
-            const player = await Pokemon.findByPk(id);
+            const player = await Pokemon.findByPk(id, {
+                include: {
+                    model: Types,
+                    attributes: ["name"],
+                    through: {
+                    attributes: []
+                    }
+                },
+            });
             res.json(player);
         }else{
             res.json(await getPokeByIdApi(id));

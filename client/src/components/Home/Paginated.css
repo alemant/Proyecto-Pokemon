@@ -18,6 +18,20 @@
     cursor: pointer;
 }
 
+/* .pagin {
+    background-color:rgb(135, 15, 162);
+    color:rgb(135, 15, 162);
+} */
+
+.paginated .pagin {
+    /* background: url(./pokeAbierta4.png); */
+    /* background-size: cover; */
+    color:rgb(135, 15, 162);
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+}
+
 .pagin:hover {
     background-color: rgb(245, 235, 235);
     color: rgb(67, 128, 192);
@@ -31,3 +45,4 @@
     color: rgb(67, 128, 192);
     border-radius: 15%;
 }
+
