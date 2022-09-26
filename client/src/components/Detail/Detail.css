@@ -36,22 +36,10 @@
     text-shadow: 4px -1px 0px rgba(9, 8, 8, 0.73);
 }
 
-/* .name {
-    text-decoration: none;
-    display: block;
-    border: 1px solid blue;
-    width: 50px;
-    height: 15px;
-    border-radius: 5%;
-    padding-top: 20px;
-    font-family: arial;
-    transition: 2s;
-} */
-
 #card {
-    height: 30rem;
-    width: 35rem;
-    margin-top: 8rem;
+    height: auto;
+    width: auto;
+    padding: 2%;
     background-color: rgba(68, 74, 75, 0.84);
     border-radius: 5rem;
 }
@@ -62,15 +50,11 @@ h4 {
     text-shadow: 4px -1px 0 rgba(8, 8, 8, 0.902)
 }
 
-/* .id {
-    color:blue
-} */
-
 .images {
     padding-bottom: 15px;
     transition: 1.4s;
     margin-left: 10px;
-    margin-top: 5rem;
+    margin-top: -80px;
 }
 
 .images:hover {
@@ -87,9 +71,6 @@ h4 {
     .div-detail {
         flex-direction: column;
         margin: 0 auto;
-    }
-    .images {
-        margin-top: 0;
     }
     #card {
         margin: 0 auto;
