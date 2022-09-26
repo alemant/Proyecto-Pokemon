@@ -7,12 +7,20 @@ body{
     background-attachment: fixed;
 }
 
+.pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
 .filters{
     display: flex;
     flex-direction: row;
     justify-content:center;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 12px;
 }
 
 /* .reload{
@@ -34,7 +42,6 @@ body{
     background-color: #b717d7;
     border: none;
     border-radius: 15px;
-    /* box-shadow: 10px 0px 10px #a60bc5; */
     box-shadow: 0 5px #666;
 }
 
@@ -44,14 +51,9 @@ body{
 
 .button:active {
     background-color: #b717d7;
-    /* box-shadow: 0 5px #666; */
     box-shadow: 0px 5px 10px #c5bac7;
     transform: translateY(4px);
 }
-
-/* .link {
-    text-decoration: none;
-} */
 
 .link {
     margin: 10px;
@@ -69,7 +71,6 @@ body{
     background-color: #b717d7;
     border: none;
     border-radius: 15px;
-    /* box-shadow: 10px 0px 10px #a60bc5; */
     box-shadow: 0 5px #666;
 }
 
@@ -79,7 +80,6 @@ body{
 
 .link:active {
     background-color: #b717d7;
-    /* box-shadow: 0 5px #666; */
     box-shadow: 0px 5px 10px #c5bac7;
     transform: translateY(4px);
 }

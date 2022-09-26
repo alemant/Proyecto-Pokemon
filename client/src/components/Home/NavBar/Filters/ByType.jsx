@@ -29,7 +29,7 @@ export default function ByType(){
     array = array.filter((value, index, self) => index === self.findIndex(t => t.name === value.name));
 
     return (
-        <div>
+        <div className="div-filters">
             <select className='select' onChange={e => handleOnChange(e)}>
                 <option value="All">All</option>
                 {array && array.map(t => <option value={t.name} key={t.name}>{t.name}</option>)}

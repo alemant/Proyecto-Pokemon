@@ -54,17 +54,19 @@ export default function Home(){
             <div className="reload">
                 <button className= "button" onClick={e => handleClick(e)}>Reload Pokemons</button>
             </div>
-            <div className="filters">
-                <ByType/>
-                <ByForce/>
-                <ByCreation/>
-                <AlphabeticOrder/>
+            <div className="pages">
                 <Paginated
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons}
                     paginado={paginado}
                     currentPage={currentPage}
                 />
+            </div>
+            <div className="filters">
+                <ByType/>
+                <ByForce/>
+                <ByCreation/>
+                <AlphabeticOrder/>
             </div>
             <div>
                 <Cards allPokemons= {currentPokemons}/>

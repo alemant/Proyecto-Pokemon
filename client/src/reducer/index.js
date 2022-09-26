@@ -57,62 +57,40 @@ function rootReducer(state = initialState, action) {
                 }
             }
         case "ORDER_BY_NAME":
-            let sortedArr =
-                action.payload === "asc"
-                ? state.pokemons.sort(function (a, b) {
-                    if (a.name > b.name) {
-                        return 1;
-                    }
-                    if (a.name < b.name) {
-                        return -1;
-                    }
-                    return 0;
-                    })
-                    : state.pokemons.sort(function (a, b) {
-                        if (a.name < b.name) {
-                            return 1;
-                        }
-                        if (a.name > b.name) {
-                            return -1;
-                        }
-                        return 0;
-                    });
-                    return {
-                        ...state,
-                        pokemons: sortedArr,
-                    };
-
+            let allPokes = [...state.pokemons];
+            allPokes = allPokes.sort((a, b) =>{
+                if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                    return action.payload === "asc" ? -1 : 1;
+                }
+                if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return action.payload === "desc" ? -1 : 1;
+                }
+                return 0;
+            })
+            return {
+                ...state,
+                pokemons:  allPokes,
+            }
         case "GET_DETAILS":
             return {
                 ...state,
                 details: action.payload,
             };
         case "ORDER_BY_ATTACK":
-            let sortedArr2 =
-                action.payload === "desc"
-                ? state.pokemons.sort(function (a, b) {
-                    if (a.attack > b.attack) {
-                        return 1;
-                    }
-                    if (a.attack < b.attack) {
-                        return -1;
-                    }
-                    return 0;
-                })
-                : state.pokemons.sort(function (a, b) {
-                    if (a.attack > b.attack) {
-                        return -1;
-                    }
-                    if (a.attack < b.attack) {
-                        return 1;
-                    }
-                    return 0;
-                });
-                return {
-                    ...state,
-                    pokemons: sortedArr2,
-                };
-
+            let allPoks = [...state.pokemons];
+            allPoks = allPoks.sort((a, b) => {
+                if (a.attack < b.attack) {
+                    return action.payload === "weak" ? -1 : 1;
+                }
+                if (a.attack > b.attack) {
+                    return action.payload === "strong" ? -1 : 1;
+                }
+                return 0;
+            });
+            return {
+                ...state,
+                pokemons: allPoks,
+            };
         default:
             return state;
     }

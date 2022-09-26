@@ -11,7 +11,7 @@ export default function ByCreation(){
         dispatch(filterCreated(e.target.value));
     }
     return(
-        <div>
+        <div className="div-filters">
             <select className="select" onChange={e => handleChange(e)}>
                 <option value="all">All</option>
                 <option value="api">API</option>

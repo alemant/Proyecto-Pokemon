@@ -28,21 +28,19 @@ export default function SearchBar(){
 
     return (
         <div>
-            <div>
-                <h1 className="title">Pokemon App</h1>
-                <input
-                    type="text"
-                    placeholder="Pokemon search..."
-                    value={pokemon}
-                    onChange={(e) => handleInputChange(e)}
-                    onKeyPress={e => handleKeyPress(e)}>
-                </input>
-                <button
-                    className="buttonSearchBar"
-                    type="submit"
-                    onClick={(e) => handleSubmit(e)}
-                >Search</button>
-            </div>
+            <h1 className="title">Pokemon App</h1>
+            <input
+                type="text"
+                placeholder="Pokemon search..."
+                value={pokemon}
+                onChange={(e) => handleInputChange(e)}
+                onKeyPress={e => handleKeyPress(e)}>
+            </input>
+            <button
+                className="buttonSearchBar"
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+            >Search</button>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 .card {
     background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(108, 136, 147, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    border-color: rgb(22, 22, 70);
+    border: 1px solid white;
     border-radius: 10px;
     margin: 20px;
     width: 20rem;

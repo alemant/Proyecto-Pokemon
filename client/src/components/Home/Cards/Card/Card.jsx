@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
-export default function Card({image, name, types, id}){
+export default function Card({image, name, types, id, attack}){
     // console.log(types)
     return(
         <div className='card'>
@@ -22,6 +22,7 @@ export default function Card({image, name, types, id}){
                     );
                 })}
             </div>
+            <div>Strenght: 💪🏼{attack}</div>
             <div>
                 <img className="img" src={image} alt="No se encontró la imagen"  width="230px" height="230px"/>
             </div>

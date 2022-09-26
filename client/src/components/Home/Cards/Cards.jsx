@@ -16,6 +16,7 @@ export default function Cards({allPokemons}){
                     image={pokemon.image}
                     name={pokemon.name}
                     types={pokemon.types}
+                    attack={pokemon.attack}
                 />
             ))}
         </div>
