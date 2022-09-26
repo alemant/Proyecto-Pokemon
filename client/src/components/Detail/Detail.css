@@ -1,32 +1,17 @@
 .detail {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
-.Title {
-    color: white;
-    padding-top: 2rem;
-    text-shadow: 4px -1px 0px rgba(9, 8, 8, 0.73);
-}
-
 .goBack {
-    display: inline-block;
-    width: 80px;
-    height: 25px;
-    padding: 7px 25px;
-    padding-bottom: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
     color: #fff;
     background-color: #a60bc5;
-    border: none;
     border-radius: 15px;
-    /* box-shadow: 10px 0px 10px #a60bc5; */
     box-shadow: 0 5px #666;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 14px;
 }
 
 .goBack:hover {
@@ -35,9 +20,20 @@
 
 .goBack:active {
     background-color: #a60bc5;
-    /* box-shadow: 0 5px #666; */
     box-shadow: 0px 5px 10px #c5bac7;
     transform: translateY(4px);
+}
+
+.div-detail {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.Title {
+    color: white;
+    padding-top: 2rem;
+    text-shadow: 4px -1px 0px rgba(9, 8, 8, 0.73);
 }
 
 /* .name {
@@ -70,15 +66,32 @@ h4 {
     color:blue
 } */
 
-.image {
+.images {
     padding-bottom: 15px;
     transition: 1.4s;
     margin-left: 10px;
     margin-top: 5rem;
 }
 
-.image:hover {
+.images:hover {
     margin-top: 5px;
     transition: 1.9s;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+@media (max-width: 1100px) {
+    .detail {
+        justify-content: center;
+        padding: 0;
+    }
+    .div-detail {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .images {
+        margin-top: 0;
+    }
+    #card {
+        margin: 0 auto;
+    }
 }

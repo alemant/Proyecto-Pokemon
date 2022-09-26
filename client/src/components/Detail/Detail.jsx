@@ -21,47 +21,49 @@ export default function Detail(){
 
     return (
         <div className='detail'>
-            <div>
+            <div className="div-goBack">
                 <h3>
                     <a className="goBack" href="/home">Go back to Home</a>
                 </h3>
             </div>
-            <div className="image">
-                <img src={pokemon.image} alt="No se encontró la imagen"/>
-            </div>
-            <div id='card'>
-                <h1 className="Title">
-                    Hi, my name is {pokemon.name?.replace(pokemon.name[0], pokemon.name[0].toUpperCase())}
-                </h1>
-                <h4>
-                    My types: {pokemon.types?.map(t => {
-                        return (
-                            <span key={t}>
-                                <span className="type">
-                                    {t.replace(t[0], t[0].toUpperCase())}
+            <div className="div-detail">
+                <div className="images">
+                    <img src={pokemon.image} alt="imagen de un pokemon"/>
+                </div>
+                <div id='card'>
+                    <h1 className="Title">
+                        Hi, my name is {pokemon.name?.replace(pokemon.name[0], pokemon.name[0].toUpperCase())}
+                    </h1>
+                    <h4>
+                        My types: {pokemon.types?.map(t => {
+                            return (
+                                <span key={t}>
+                                    <span className="type">
+                                        {t.replace(t[0], t[0].toUpperCase())}
+                                    </span>
                                 </span>
-                            </span>
-                        );
-                    })}
-                </h4>
-                <h4>
-                    My life is: {pokemon.hp}
-                </h4>
-                <h4>
-                    My strength is: {pokemon.attack}
-                </h4>
-                <h4>
-                    My defense is: {pokemon.defense}
-                </h4>
-                <h4>
-                    My speed is: {pokemon.speed}
-                </h4>
-                <h4>
-                    My height is: {(pokemon.height / 10)} metros
-                </h4>
-                <h4>
-                    My weight is: {(pokemon.weight / 10)} kilogramos
-                </h4>
+                            );
+                        })}
+                    </h4>
+                    <h4>
+                        My life is: {pokemon.hp}
+                    </h4>
+                    <h4>
+                        My strength is: {pokemon.attack}
+                    </h4>
+                    <h4>
+                        My defense is: {pokemon.defense}
+                    </h4>
+                    <h4>
+                        My speed is: {pokemon.speed}
+                    </h4>
+                    <h4>
+                        My height is: {(pokemon.height / 10)} metros
+                    </h4>
+                    <h4>
+                        My weight is: {(pokemon.weight / 10)} kilogramos
+                    </h4>
+                </div>
             </div>
         </div>
     )
