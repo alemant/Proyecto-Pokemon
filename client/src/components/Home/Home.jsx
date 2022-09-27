@@ -10,6 +10,7 @@ import { getTypes, getPokemons } from '../../actions/index.js';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Paginated from './Paginated';
+import Load from '../Loading/Load.jsx';
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -69,7 +70,7 @@ export default function Home(){
                 <AlphabeticOrder/>
             </div>
             <div>
-                <Cards allPokemons= {currentPokemons}/>
+                {allPokemons.length === 0 ? <Load /> : <Cards allPokemons= {currentPokemons}/>}
             </div>
         </div>
     )
