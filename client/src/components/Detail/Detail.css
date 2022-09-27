@@ -55,11 +55,16 @@ h4 {
 }
 
 .image-poke:hover {
-    transition: 1.9s;
-    transform: scale(1.1);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #ec731e;
+    transform: rotateY(180deg);
 }
 
 @media (max-width: 1100px) {
+    .goBack {
+        position: relative;
+    }
     .div-detail {
         size: 12px;
         flex-direction: column;
@@ -69,29 +74,13 @@ h4 {
     .image-poke {
         scale: 0.5;
     }
-    /* @keyframes latidos {
-        from { transform: none; }
-        50% { transform: scale(1.2); }
-        to { transform: none; }
-    }
-    .image-poke:hover{
-        animation: latidos 8s infinite;
-    } */
     #card {
-        scale: 0.5;
-        margin-top: -190px;
+        scale: 0.7;
+        margin-top: -150px;
     }
-        /* .image-poke:hover {
-            transform: rotateY(3600deg);
-        } */
-
-        .image-poke:hover {
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            box-shadow: 0px 0px 15px 15px #ec731e;
-            -webkit-box-shadow: 0px 0px 15px 15px #ec731e;
-            transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-        }
-        
+    .image-poke:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px 15px #ec731e;
+        transform: rotate(360deg);
+    }
 }
