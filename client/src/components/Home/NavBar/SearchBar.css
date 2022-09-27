@@ -18,3 +18,24 @@
 .title:hover {
     color: #17D7A0;
 }
+
+.search {
+    border-radius: 28px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.btnSearch {
+    background: #d717b1;
+    background-image: linear-gradient(to bottom, #d717b1, #2079b0);
+    border-radius: 28px;
+    text-shadow: 1px 1px 1px #9daef5;
+    box-shadow: 6px 5px 24px #666666;
+    animation: parpadear 3s infinite alternate;
+    font-family: Arial;
+    color: #fafafa;
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
