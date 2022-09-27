@@ -27,7 +27,7 @@ export default function Detail(){
                 </h3>
             </div>
             <div className="div-detail">
-                <div className="images">
+                <div className="image-poke">
                     <img src={pokemon.image} alt="imagen de un pokemon"/>
                 </div>
                 <div id='card'>

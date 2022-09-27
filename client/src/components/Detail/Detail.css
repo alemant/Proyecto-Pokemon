@@ -5,6 +5,8 @@
 }
 
 .goBack {
+    width: 100%;
+    margin-bottom: 2px;
     color: #fff;
     background-color: #a60bc5;
     border-radius: 15px;
@@ -27,7 +29,7 @@
 .div-detail {
     display: flex;
     flex-direction: row;
-    margin: auto;
+    margin: 10px auto;
 }
 
 .Title {
@@ -37,8 +39,6 @@
 }
 
 #card {
-    height: auto;
-    width: auto;
     padding: 2%;
     background-color: rgba(68, 74, 75, 0.84);
     border-radius: 5rem;
@@ -50,36 +50,48 @@ h4 {
     text-shadow: 4px -1px 0 rgba(8, 8, 8, 0.902)
 }
 
-.images {
-    padding-bottom: 15px;
+.image-poke {
     transition: 1.4s;
-    margin-left: 10px;
-    margin-top: -80px;
 }
 
-.images:hover {
-    /* margin-top: 5px; */
+.image-poke:hover {
     transition: 1.9s;
     transform: scale(1.1);
 }
 
 @media (max-width: 1100px) {
-    .detail {
-        justify-content: center;
-        padding: 0;
-    }
     .div-detail {
+        size: 12px;
         flex-direction: column;
         align-items: center;
-        margin: -80px 0;
+        margin: -60px 0;
     }
-    .images {
-        /* margin-top: -190px; */
+    .image-poke {
         scale: 0.5;
     }
+    /* @keyframes latidos {
+        from { transform: none; }
+        50% { transform: scale(1.2); }
+        to { transform: none; }
+    }
+    .image-poke:hover{
+        animation: latidos 8s infinite;
+    } */
     #card {
         scale: 0.5;
         margin-top: -190px;
-        /* margin: 0 auto; */
     }
+        /* .image-poke:hover {
+            transform: rotateY(3600deg);
+        } */
+
+        .image-poke:hover {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            box-shadow: 0px 0px 15px 15px #ec731e;
+            -webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+        
 }
