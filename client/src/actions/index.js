@@ -22,6 +22,7 @@ export function getPokeByName(name) {
         payload: json.data,
       });
     } catch (error) {
+      alert('Pokemon not found')
       console.log(error);
     }
   };
@@ -51,10 +52,15 @@ export function filterPokemonsByTypes(payload) {
 }
 
 export function filterCreated(payload) {
-  return {
-    type: "FILTER_CREATED",
-    payload,
-  };
+  try{
+    return {
+      type: "FILTER_CREATED",
+      payload,
+    };
+  }
+  catch(e){
+    alert("No Pokemon created");
+  }
 }
 
 export function orderByName(payload) {

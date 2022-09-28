@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Paginated from './Paginated';
 import Load from '../Loading/Load.jsx';
-import poke from '../../images/pokemon.mp3';
 
 export default function Home(){
     const dispatch = useDispatch();
@@ -47,10 +46,6 @@ export default function Home(){
 
     return(
         <div className="home">
-            <audio controls autoplay="true">
-                <source src={poke} type="audio/mpeg">
-                </source>
-            </audio>
             <div className="search">
                 <SearchBar />
             </div>
