@@ -46,6 +46,9 @@ export default function Home(){
 
     (() => {
         setTimeout(() => {
+            
+        }, 6000);
+        setTimeout(() => {
             if (allPokemons.length === 0) {
                 alert('There is no Pokemon here')
             }
