@@ -44,17 +44,6 @@ export default function Home(){
         dispatch(getPokemons());
     }
 
-    (() => {
-        setTimeout(() => {
-            
-        }, 6000);
-        setTimeout(() => {
-            if (allPokemons.length === 0) {
-                alert('There is no Pokemon here')
-            }
-        }, 6000); 
-    })();
-
     return(
         <div className="home">
             <div className="search">
