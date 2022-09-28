@@ -44,6 +44,12 @@ export default function Home(){
         dispatch(getPokemons());
     }
 
+    (() => {
+        if(allPokemons.length === 0){
+        alert('There is no Pokemon here')
+        }
+    })();
+
     return(
         <div className="home">
             <div className="search">

@@ -52,15 +52,10 @@ export function filterPokemonsByTypes(payload) {
 }
 
 export function filterCreated(payload) {
-  try{
-    return {
-      type: "FILTER_CREATED",
-      payload,
-    };
-  }
-  catch(e){
-    alert("No Pokemon created");
-  }
+  return {
+    type: "FILTER_CREATED",
+    payload,
+  };
 }
 
 export function orderByName(payload) {
