@@ -1,7 +1,190 @@
-.img-pica {
-    width: 350px;
-    height: 350px;
-    box-shadow: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(108, 136, 147, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    border-radius: 15px;
-    background-color: #fff;
+#fountainTextG {
+    width: 900px;
+    margin: 200px 36%;
+    
+}
+
+.fountainTextG {
+    color: rgb(215, 23, 177);
+    font-family: Arial;
+    font-size: 94px;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    float: left;
+    animation-name: bounce_fountainTextG;
+    -o-animation-name: bounce_fountainTextG;
+    -ms-animation-name: bounce_fountainTextG;
+    -webkit-animation-name: bounce_fountainTextG;
+    -moz-animation-name: bounce_fountainTextG;
+    animation-duration: 1.551s;
+    -o-animation-duration: 1.551s;
+    -ms-animation-duration: 1.551s;
+    -webkit-animation-duration: 1.551s;
+    -moz-animation-duration: 1.551s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -o-animation-direction: normal;
+    -ms-animation-direction: normal;
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+    transform: scale(.5);
+    -o-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+}
+
+#fountainTextG_1 {
+    animation-delay: 0.5525s;
+    -o-animation-delay: 0.5525s;
+    -ms-animation-delay: 0.5525s;
+    -webkit-animation-delay: 0.5525s;
+    -moz-animation-delay: 0.5525s;
+}
+
+#fountainTextG_2 {
+    animation-delay: 0.659s;
+    -o-animation-delay: 0.659s;
+    -ms-animation-delay: 0.659s;
+    -webkit-animation-delay: 0.659s;
+    -moz-animation-delay: 0.659s;
+}
+
+#fountainTextG_3 {
+    animation-delay: 0.7755s;
+    -o-animation-delay: 0.7755s;
+    -ms-animation-delay: 0.7755s;
+    -webkit-animation-delay: 0.7755s;
+    -moz-animation-delay: 0.7755s;
+}
+
+#fountainTextG_4 {
+    animation-delay: 0.882s;
+    -o-animation-delay: 0.882s;
+    -ms-animation-delay: 0.882s;
+    -webkit-animation-delay: 0.882s;
+    -moz-animation-delay: 0.882s;
+}
+
+#fountainTextG_5 {
+    animation-delay: 0.9985s;
+    -o-animation-delay: 0.9985s;
+    -ms-animation-delay: 0.9985s;
+    -webkit-animation-delay: 0.9985s;
+    -moz-animation-delay: 0.9985s;
+}
+
+#fountainTextG_6 {
+    animation-delay: 1.105s;
+    -o-animation-delay: 1.105s;
+    -ms-animation-delay: 1.105s;
+    -webkit-animation-delay: 1.105s;
+    -moz-animation-delay: 1.105s;
+}
+
+#fountainTextG_7 {
+    animation-delay: 1.2115s;
+    -o-animation-delay: 1.2115s;
+    -ms-animation-delay: 1.2115s;
+    -webkit-animation-delay: 1.2115s;
+    -moz-animation-delay: 1.2115s;
+}
+
+#fountainTextG_8 {
+    animation-delay: 1.318s;
+    -o-animation-delay: 1.318s;
+    -ms-animation-delay: 1.318s;
+    -webkit-animation-delay: 1.318s;
+    -moz-animation-delay: 1.318s;
+}
+
+#fountainTextG_9 {
+    animation-delay: 1.4245s;
+    -o-animation-delay: 1.4245s;
+    -ms-animation-delay: 1.4245s;
+    -webkit-animation-delay: 1.4245s;
+    -moz-animation-delay: 1.4245s;
+}
+
+#fountainTextG_10 {
+    animation-delay: 1.531s;
+    -o-animation-delay: 1.531s;
+    -ms-animation-delay: 1.531s;
+    -webkit-animation-delay: 1.531s;
+    -moz-animation-delay: 1.531s;
+}
+
+
+
+
+@keyframes bounce_fountainTextG {
+    0% {
+        transform: scale(1);
+        color: rgb(215, 23, 177);
+    }
+
+    100% {
+        transform: scale(.5);
+        color: rgb(215, 23, 177);
+    }
+}
+
+@-o-keyframes bounce_fountainTextG {
+    0% {
+        -o-transform: scale(1);
+        color: rgb(215, 23, 177);
+    }
+
+    100% {
+        -o-transform: scale(.5);
+        color: rgb(215, 23, 177);
+    }
+}
+
+@-ms-keyframes bounce_fountainTextG {
+    0% {
+        -ms-transform: scale(1);
+        color: rgb(215, 23, 177);
+    }
+
+    100% {
+        -ms-transform: scale(.5);
+        color: rgb(215, 23, 177);
+    }
+}
+
+@-webkit-keyframes bounce_fountainTextG {
+    0% {
+        -webkit-transform: scale(1);
+        color: rgb(215, 23, 177);
+    }
+
+    100% {
+        -webkit-transform: scale(.5);
+        color: rgb(215, 23, 177);
+    }
+}
+
+@-moz-keyframes bounce_fountainTextG {
+    0% {
+        -moz-transform: scale(1);
+        color: rgb(215, 23, 177);
+    }
+
+    100% {
+        -moz-transform: scale(.5);
+        color: rgb(215, 23, 177);
+    }
+}
+
+@media (max-width: 1100px){
+    #fountainTextG {
+        width: 900px;
+        margin: 200px 4px;
+    }
 }

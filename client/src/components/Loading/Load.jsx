@@ -1,11 +1,39 @@
 import React from 'react';
-import pica from '../../images/loading.gif'
 import './Load.css'
 
 export default function Load() {
     return (
-        <div className="pica">
-            <img className="img-pica" src={pica} alt="Pikachu durmiendo" />
+        <div id="fountainTextG">
+            <div id="fountainTextG_1" class="fountainTextG">
+                L
+            </div>
+            <div id="fountainTextG_2" class="fountainTextG">
+                o
+            </div>
+            <div id="fountainTextG_3" class="fountainTextG">
+                a
+            </div>
+            <div id="fountainTextG_4" class="fountainTextG">
+                d
+            </div>
+            <div id="fountainTextG_5" class="fountainTextG">
+                i
+            </div>
+            <div id="fountainTextG_6" class="fountainTextG">
+                n
+            </div>
+            <div id="fountainTextG_7" class="fountainTextG">
+                g
+            </div>
+            <div id="fountainTextG_8" class="fountainTextG">
+                .
+            </div>
+            <div id="fountainTextG_9" class="fountainTextG">
+                .
+            </div>
+            <div id="fountainTextG_10" class="fountainTextG">
+                .
+            </div>
         </div>
     )
 }
