@@ -45,9 +45,11 @@ export default function Home(){
     }
 
     (() => {
-        if(allPokemons.length === 0){
-        alert('There is no Pokemon here')
-        }
+        setTimeout(() => {
+            if (allPokemons.length === 0) {
+                alert('There is no Pokemon here')
+            }
+        }, 1000); 
     })();
 
     return(
